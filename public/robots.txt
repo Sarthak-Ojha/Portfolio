@@ -1,0 +1,32 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://your-website-url.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Disallow specific paths if any
+# Disallow: /private/
+# Disallow: /admin/
+
+# Allow specific important paths
+Allow: /src/
+Allow: /public/
+Allow: /assets/
+
+# Block common bot paths
+Disallow: /*.json$
+Disallow: /*?*$
+Disallow: /search
+
+# Allow specific file types for SEO
+Allow: *.css
+Allow: *.js
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.png
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
