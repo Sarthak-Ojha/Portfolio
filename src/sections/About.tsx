@@ -120,14 +120,15 @@ const About = () => {
 
   return (
     <section
+      id="about"
       ref={sectionRef}
-      className="about-section relative w-full min-h-screen py-24 px-4 md:px-8 lg:px-16 overflow-hidden bg-transparent"
+      className="about-section relative w-full py-20 border-t border-gray-200 dark:border-[#2a2a2a] overflow-hidden bg-transparent"
     >
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 w-full relative z-10">
         {/* Heading */}
         <h2
           ref={headingRef}
-          className="text-4xl md:text-5xl font-bold mb-8 text-[#0a0a0a] dark:text-[#fafafa]"
+          className="text-4xl font-extrabold text-[#0a0a0a] dark:text-[#fafafa] mb-8 tracking-tight"
           style={{ fontFamily: "'Space Grotesk', sans-serif" }}
         >
           About
@@ -140,12 +141,12 @@ const About = () => {
               className="text-lg md:text-xl leading-relaxed text-[#525252] dark:text-[#d4d4d4]"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              Mobile App & Full-Stack Developer building high-performance Flutter apps, Firebase integrations, and end-to-end web solutions with React and Node.js.
+              I'm a Software Developer specializing in Flutter, Firebase, and full-stack web development. I build fast, scalable mobile applications and modern web solutions using Flutter, React, Node.js, and MongoDB, with a focus on clean code, performance, and great user experiences.
             </p>
           </div>
 
           {/* Stats Grid */}
-          <div ref={statsRef} className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-8">
+          <div ref={statsRef} className="grid grid-cols-1 gap-8 md:gap-8">
             {stats.map((stat, index) => (
               <div
                 key={index}

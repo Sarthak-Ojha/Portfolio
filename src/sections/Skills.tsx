@@ -19,7 +19,6 @@ const skillCategories: SkillCategory[] = [
       { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
       { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
       { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-      { name: 'Java', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
       { name: 'PHP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
     ],
   },
@@ -93,14 +92,15 @@ const Skills = () => {
 
   return (
     <section
+      id="skills"
       ref={sectionRef}
-      className="skills-section relative w-full py-24 px-4 md:px-8 lg:px-16 bg-transparent"
+      className="skills-section relative w-full py-20 border-t border-gray-200 dark:border-[#2a2a2a] bg-transparent"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 w-full">
         {/* Header */}
         <div ref={headerRef} className="mb-12">
           <h2
-            className="text-4xl md:text-5xl font-bold text-[#0a0a0a] dark:text-[#fafafa]"
+            className="text-4xl font-extrabold text-[#0a0a0a] dark:text-[#fafafa] mb-8 tracking-tight"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Skills
@@ -112,18 +112,18 @@ const Skills = () => {
           {skillCategories.map((category, catIndex) => (
             <div
               key={catIndex}
-              className="skill-row flex flex-col md:flex-row md:items-start border-b border-[#e5e5e5] dark:border-[#2a2a2a] py-6"
+              className="skill-row flex flex-col md:flex-row md:items-center gap-6 border-b border-[#e5e5e5] dark:border-[#2a2a2a] py-6"
             >
               {/* Category label */}
               <h3
-                className="w-full md:w-36 text-sm font-semibold text-[#a3a3a3] dark:text-[#666] uppercase tracking-wider mb-4 md:mb-0 md:pt-1 flex-shrink-0"
+                className="md:w-36 text-sm font-semibold text-[#a3a3a3] dark:text-[#666] uppercase tracking-wider flex-shrink-0 md:mb-0 mb-4"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {category.name}
               </h3>
 
               {/* Icons row */}
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-6 items-center">
                 {category.skills.map((skill, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <img

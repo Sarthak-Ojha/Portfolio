@@ -10,7 +10,7 @@ const Contact = () => {
   const infoRef = useRef<HTMLDivElement>(null);
   const socialsRef = useRef<HTMLDivElement>(null);
 
-  const [state, handleSubmit] = useForm("mkoonkvr");
+  const [state, handleSubmit] = useForm("xvzeepyj");
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -18,6 +18,12 @@ const Contact = () => {
   });
 
   const [focusedField, setFocusedField] = useState<string | null>(null);
+  const [emailError, setEmailError] = useState<string>('');
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -104,6 +110,15 @@ const Contact = () => {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
+    // Validate email before submission
+    if (!validateEmail(formData.email)) {
+      setEmailError('Please enter a valid email address');
+      return;
+    }
+    
+    // Clear any previous email error
+    setEmailError('');
+    
     // Create a new FormData object
     const submitData = new FormData();
     submitData.append('name', formData.name);
@@ -113,9 +128,13 @@ const Contact = () => {
     // Submit to Formspree
     await handleSubmit(submitData as any);
     
-    // Reset form on successful submission
+    // Reset form after successful submission
     if (state.succeeded) {
       setFormData({ name: '', email: '', message: '' });
+      // Also reset the form element directly
+      if (formRef.current) {
+        formRef.current.reset();
+      }
     }
   };
 
@@ -127,14 +146,14 @@ const Contact = () => {
     <section
       id="contact"
       ref={sectionRef}
-      className="contact-section relative w-full py-24 px-4 md:px-8 lg:px-16 overflow-hidden bg-transparent"
+      className="contact-section relative w-full py-20 border-t border-gray-200 dark:border-[#2a2a2a] overflow-hidden bg-transparent"
     >
 
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 w-full relative z-10">
         {/* Section Header */}
         <div ref={headerRef} className="mb-16">
           <h2
-            className="text-4xl md:text-5xl font-bold mb-4 text-[#0a0a0a] dark:text-[#fafafa]"
+            className="text-4xl font-extrabold text-[#0a0a0a] dark:text-[#fafafa] mb-8 tracking-tight"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Have a Project in Mind?
@@ -147,7 +166,7 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Contact Form */}
           <form ref={formRef} onSubmit={handleFormSubmit} className="flex flex-col gap-5">
             {/* Success Message */}
@@ -155,7 +174,7 @@ const Contact = () => {
               <div className="flex items-center gap-3 p-4 rounded-xl bg-green-500/10 border border-green-500/20">
                 <CheckCircle className="w-5 h-5 text-green-500" />
                 <p className="text-green-500" style={{ fontFamily: "'Inter', sans-serif" }}>
-                  Dhanyabad! Thank you for your message! I will get back to you soon.
+                  Thank you for your message! I will get back to you soon.
                 </p>
               </div>
             )}
@@ -217,7 +236,10 @@ const Contact = () => {
                 type="email"
                 name="email"
                 value={formData.email}
-                onChange={(e: any) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e: any) => {
+                  setFormData({ ...formData, email: e.target.value });
+                  setEmailError(''); // Clear error when user types
+                }}
                 onFocus={() => setFocusedField('email')}
                 onBlur={() => setFocusedField(null)}
                 className="w-full px-0 py-3 border-b border-[#e5e5e5] transition-all duration-200 outline-none bg-transparent rounded-none focus:border-[#0a0a0a]"
@@ -229,6 +251,11 @@ const Contact = () => {
                 required
                 disabled={state.submitting}
               />
+              {emailError && (
+                <p className="text-red-500 text-sm mt-1" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  {emailError}
+                </p>
+              )}
               <ValidationError 
                 prefix="Email" 
                 field="email"

@@ -102,13 +102,13 @@ const Projects = () => {
 
   return (
     <section id="projects" ref={sectionRef}
-      className="projects-section relative w-full py-24 px-4 md:px-8 lg:px-16 bg-transparent"
+      className="projects-section relative w-full py-20 border-t border-gray-200 dark:border-[#2a2a2a] bg-transparent"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-5xl mx-auto px-6 md:px-12 w-full">
         {/* Section Header */}
         <div ref={headerRef} className="mb-16">
           <h2
-            className="text-4xl md:text-5xl font-bold mb-4 text-[#0a0a0a] dark:text-[#fafafa]"
+            className="text-4xl font-extrabold text-[#0a0a0a] dark:text-[#fafafa] mb-8 tracking-tight"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
             Projects
@@ -123,7 +123,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="project-item group border-b border-[#e5e5e5] dark:border-[#2a2a2a] py-4 cursor-pointer"
+              className="project-item group border-b border-gray-200 dark:border-[#2a2a2a] py-5 cursor-pointer"
               onClick={() => toggleAccordion(index)}
             >
               <div className="w-full flex items-center justify-between text-left group">
