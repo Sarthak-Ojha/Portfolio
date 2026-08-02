@@ -3,7 +3,7 @@
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 
   # Clickjacking protection
-  X-Frame-Options: DENY
+  X-Frame-Options: SAMEORIGIN
 
   # Cross-Origin Opener Policy — isolate browsing context
   Cross-Origin-Opener-Policy: same-origin
@@ -18,4 +18,4 @@
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
 
   # Content Security Policy
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://formspree.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://api.formspree.io; frame-ancestors 'none';
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://formspree.io; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://api.formspree.io; frame-ancestors 'self'; object-src 'self';
