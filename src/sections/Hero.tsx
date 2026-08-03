@@ -14,25 +14,23 @@ const Hero = () => {
 
     const onLoad = () => {
       requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          ctx = gsap.context(() => {
-            const tl = gsap.timeline();
+        ctx = gsap.context(() => {
+          const tl = gsap.timeline();
 
-            tl.fromTo(
-              subtitleRef.current,
-              { opacity: 0, y: 18 },
-              { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', force3D: true },
-              0
-            );
+          tl.fromTo(
+            subtitleRef.current,
+            { opacity: 0, y: 18 },
+            { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', force3D: true },
+            0
+          );
 
-            tl.fromTo(
-              scrollIndicatorRef.current,
-              { opacity: 0 },
-              { opacity: 1, duration: 0.3, force3D: true },
-              0.55
-            );
-          }, sectionRef);
-        });
+          tl.fromTo(
+            scrollIndicatorRef.current,
+            { opacity: 0 },
+            { opacity: 1, duration: 0.3, force3D: true },
+            0.55
+          );
+        }, sectionRef);
       });
     };
 
