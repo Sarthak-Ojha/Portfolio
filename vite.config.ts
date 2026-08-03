@@ -71,5 +71,7 @@ export default defineConfig({
     // Optimize build performance
     target: 'es2015',
     minify: 'esbuild',
+    // Optimize CSS inlining
+    cssMinify: true,
   },
 });

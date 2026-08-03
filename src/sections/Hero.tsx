@@ -125,10 +125,10 @@ const Hero = () => {
         className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center z-20"
         style={{ opacity: 0 }}
       >
-        <span className="tracking-widest text-xs font-bold text-neutral-400 dark:text-neutral-500 uppercase mb-2">
+        <span className="tracking-widest text-xs font-bold text-[#525252] dark:text-[#d4d4d4] uppercase mb-2">
           Scroll
         </span>
-        <ChevronDown className="w-5 h-5 animate-bounce text-[#a3a3a3] dark:text-neutral-500" />
+        <ChevronDown className="w-5 h-5 animate-bounce text-[#525252] dark:text-[#d4d4d4]" />
       </div>
 
       {/* CV Modal */}
