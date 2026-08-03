@@ -13,29 +13,39 @@ const Hero = () => {
     let ctx: ReturnType<typeof gsap.context> | null = null;
 
     const onLoad = () => {
-      // Defer animations to reduce main-thread blocking
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          ctx = gsap.context(() => {
-            const tl = gsap.timeline();
+      // Use Intersection Observer to defer animations until element is visible
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              ctx = gsap.context(() => {
+                const tl = gsap.timeline();
 
-            // Use simple transforms to minimize reflows
-            tl.fromTo(
-              subtitleRef.current,
-              { opacity: 0, y: 18 },
-              { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', force3D: true },
-              0
-            );
+                // Use simple transforms to minimize reflows
+                tl.fromTo(
+                  subtitleRef.current,
+                  { opacity: 0, y: 18 },
+                  { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', force3D: true },
+                  0
+                );
 
-            tl.fromTo(
-              scrollIndicatorRef.current,
-              { opacity: 0 },
-              { opacity: 1, duration: 0.3, force3D: true },
-              0.55
-            );
-          }, sectionRef);
-        });
-      });
+                tl.fromTo(
+                  scrollIndicatorRef.current,
+                  { opacity: 0 },
+                  { opacity: 1, duration: 0.3, force3D: true },
+                  0.55
+                );
+              }, sectionRef);
+              observer.disconnect();
+            }
+          });
+        },
+        { threshold: 0.1 }
+      );
+
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
     };
 
     if (document.readyState === 'complete') {

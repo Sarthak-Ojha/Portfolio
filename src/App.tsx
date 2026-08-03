@@ -23,6 +23,14 @@ function App() {
     }
   }, [darkMode]);
 
+  // Defer heavy animations until after initial paint
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      // Trigger any deferred animations here
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   useEffect(() => {
     // Remove CSS smooth scrolling since Lenis will handle it
     document.documentElement.style.scrollBehavior = 'auto';
