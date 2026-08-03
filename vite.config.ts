@@ -68,10 +68,6 @@ export default defineConfig({
         if (warning.code === 'MODULE_BESIDE_DEPENDENCY') return;
       },
     },
-    // Optimize CSS purging
-    css: {
-      devSourcemap: false,
-    },
     // Optimize build performance
     target: 'es2015',
     minify: 'esbuild',
