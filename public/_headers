@@ -20,11 +20,11 @@
   # Content Security Policy
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://formspree.io https://cdn.jsdelivr.net https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: https://cdn.jsdelivr.net; connect-src 'self' https://formspree.io https://api.formspree.io https://*.cloudflareinsights.com; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; require-trusted-types-for 'script'; script-src-elem 'self' 'unsafe-inline' 'unsafe-eval' https://formspree.io https://cdn.jsdelivr.net https://static.cloudflareinsights.com;
 
-# Cache static assets for 1 year
+# Cache static assets for 1 year with immutable flag
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-# Cache images for 1 year
+# Cache images for 1 year with immutable flag
 /*.png
   Cache-Control: public, max-age=31536000, immutable
 /*.jpg
@@ -35,15 +35,39 @@
   Cache-Control: public, max-age=31536000, immutable
 /*.svg
   Cache-Control: public, max-age=31536000, immutable
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
 
-# Cache fonts for 1 year
+# Cache fonts for 1 year with immutable flag
 /*.woff
   Cache-Control: public, max-age=31536000, immutable
 /*.woff2
   Cache-Control: public, max-age=31536000, immutable
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+/*.eot
+  Cache-Control: public, max-age=31536000, immutable
 
-# Cache CSS and JS for 1 year with hash-based filenames
+# Cache CSS and JS for 1 year with hash-based filenames and immutable flag
 /*.css
   Cache-Control: public, max-age=31536000, immutable
 /*.js
-  Cache-Control: public, max-age=31536000, immutable report-uri /csp-violation-report-endpoint/; report-to csp-endpoint;
+  Cache-Control: public, max-age=31536000, immutable
+
+# Cache compressed versions
+/*.gz
+  Cache-Control: public, max-age=31536000, immutable
+/*.br
+  Cache-Control: public, max-age=31536000, immutable
+
+# HTML files - shorter cache time to allow updates
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# JSON and other data files - moderate cache
+/*.json
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# Manifest file - moderate cache
+/manifest.webmanifest
+  Cache-Control: public, max-age=86400, must-revalidate

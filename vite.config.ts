@@ -3,6 +3,7 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import { inspectAttr } from 'kimi-plugin-inspect-react'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
+import viteCompression from 'vite-plugin-compression'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -13,9 +14,23 @@ export default defineConfig({
     ViteImageOptimizer({
       // WebP images are already hand-optimized — omitting webp key skips them
       png: { quality: 80 },
-      jpg: { quality: 80 },
-      jpeg: { quality: 80 },
+      jpg: { quality: 80, progressive: true },
+      jpeg: { quality: 80, progressive: true },
       includePublic: true,
+    }),
+    // Gzip compression
+    viteCompression({
+      algorithm: 'gzip',
+      ext: '.gz',
+      threshold: 1024, // Only compress files larger than 1KB
+      deleteOriginFile: false,
+    }),
+    // Brotli compression (better compression ratio)
+    viteCompression({
+      algorithm: 'brotliCompress',
+      ext: '.br',
+      threshold: 1024,
+      deleteOriginFile: false,
     }),
   ],
   resolve: {
