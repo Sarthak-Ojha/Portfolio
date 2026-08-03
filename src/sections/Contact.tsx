@@ -374,7 +374,7 @@ const Contact = () => {
             {/* Social Links */}
             <div>
               <div
-                className="text-sm tracking-widest text-[#a3a3a3] uppercase font-bold mb-4"
+                className="text-sm tracking-widest text-[#404040] dark:text-[#d4d4d4] uppercase font-bold mb-4"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 Find me on

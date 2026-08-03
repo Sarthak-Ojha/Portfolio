@@ -1,17 +1,13 @@
 # Sarthak Ojha Portfolio
 
-This is the portfolio website of Sarthak Ojha, a Mobile App Developer specializing in iOS, Android, and cross-platform technologies.
-
-## Website Structure
-
-- **Home**: https://sarthakojha.com.np/ - Main portfolio landing page
-- **About**: https://sarthakojha.com.np/#about - Information about Sarthak Ojha's background and experience
-- **Skills**: https://sarthakojha.com.np/#skills - Technical skills and expertise
-- **Projects**: https://sarthakojha.com.np/#projects - Portfolio of mobile and web development projects
-- **Contact**: https://sarthakojha.com.np/#contact - Contact information and form
+## Primary Navigation
+- Home: https://sarthakojha.com.np/
+- About: https://sarthakojha.com.np/#about
+- Skills: https://sarthakojha.com.np/#skills
+- Projects: https://sarthakojha.com.np/#projects
+- Contact: https://sarthakojha.com.np/#contact
 
 ## Developer Profile
-
 Sarthak Ojha is a software developer based in Kathmandu, Nepal with expertise in:
 - Mobile App Development (iOS, Android, React Native, Flutter)
 - Full-Stack Web Development
@@ -19,19 +15,23 @@ Sarthak Ojha is a software developer based in Kathmandu, Nepal with expertise in
 - Performance Optimization
 
 ## Social Links
+- GitHub: https://github.com/Sarthak-Ojha
+- LinkedIn: https://linkedin.com/in/sarthak-ojha
+- Twitter/X: https://x.com/Sarthak_0jha
+- Instagram: https://www.instagram.com/_sarthakojha/
 
-- **GitHub**: https://github.com/Sarthak-Ojha
-- **LinkedIn**: https://linkedin.com/in/sarthak-ojha
-- **Twitter/X**: https://x.com/Sarthak_0jha
-
-## Contact
-
-- **Email**: sarthakojha.np@gmail.com
-- **Location**: Kathmandu, Nepal
+## Contact Information
+- Email: sarthakojha.np@gmail.com
+- Location: Kathmandu, Nepal
 
 ## Technologies
+- Frontend: React, TypeScript, Tailwind CSS
+- Mobile: React Native, Flutter, Swift, Kotlin
+- Backend: Node.js, REST APIs, GraphQL
+- Tools: Git, GSAP, Lenis
 
-- **Frontend**: React, TypeScript, Tailwind CSS
-- **Mobile**: React Native, Flutter, Swift, Kotlin
-- **Backend**: Node.js, REST APIs, GraphQL
-- **Tools**: Git, GSAP, Lenis
+## Featured Projects
+- GyanYatra: Educational mobile app with gamification and Stripe integration
+- Quiz App: Flutter-based quiz application with Firebase leaderboards
+- Tourism Portal: Web platform for travel exploration and booking
+- Car Rental System: Full-stack rental management platform

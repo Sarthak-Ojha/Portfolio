@@ -47,7 +47,6 @@ const skillCategories: SkillCategory[] = [
       { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
     ],
   },
-
 ];
 
 
@@ -136,7 +135,16 @@ const Skills = () => {
                       }`}
                       loading="lazy"
                       onError={(e) => {
-                        (e.target as HTMLImageElement).style.display = 'none';
+                        const img = e.target as HTMLImageElement;
+                        img.style.display = 'none';
+                        // Add text fallback when image fails
+                        const parent = img.parentElement;
+                        if (parent && !parent.querySelector('.text-fallback')) {
+                          const fallback = document.createElement('span');
+                          fallback.className = 'text-fallback text-xs font-bold text-[#404040] dark:text-[#a3a3a3]';
+                          fallback.textContent = skill.name.substring(0, 2).toUpperCase();
+                          parent.insertBefore(fallback, img);
+                        }
                       }}
                     />
                     <span
