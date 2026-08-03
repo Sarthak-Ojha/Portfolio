@@ -167,6 +167,71 @@
         min-height: 5rem;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       }
+      /* Navbar critical styles */
+      .fixed {
+        position: fixed;
+      }
+      .top-0 {
+        top: 0;
+      }
+      .left-0 {
+        left: 0;
+      }
+      .w-full {
+        width: 100%;
+      }
+      .z-50 {
+        z-index: 50;
+      }
+      .py-4 {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+      }
+      .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .bg-white\/80 {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+      .backdrop-blur-md {
+        backdrop-filter: blur(12px);
+      }
+      .flex {
+        display: flex;
+      }
+      .items-center {
+        align-items: center;
+      }
+      .justify-between {
+        justify-content: space-between;
+      }
+      .gap-4 {
+        gap: 1rem;
+      }
+      .font-bold {
+        font-weight: 700;
+      }
+      .transition-colors {
+        transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+      @media (min-width: 768px) {
+        .md\:px-8 {
+          padding-left: 2rem;
+          padding-right: 2rem;
+        }
+        .md\:flex {
+          display: flex;
+        }
+      }
+      @media (min-width: 1024px) {
+        .lg\:px-16 {
+          padding-left: 4rem;
+          padding-right: 4rem;
+        }
+      }
     </style>
 
     <!-- Preload LCP Image -->

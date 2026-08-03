@@ -13,24 +13,28 @@ const Hero = () => {
     let ctx: ReturnType<typeof gsap.context> | null = null;
 
     const onLoad = () => {
+      // Defer animations to reduce main-thread blocking
       requestAnimationFrame(() => {
-        ctx = gsap.context(() => {
-          const tl = gsap.timeline();
+        requestAnimationFrame(() => {
+          ctx = gsap.context(() => {
+            const tl = gsap.timeline();
 
-          tl.fromTo(
-            subtitleRef.current,
-            { opacity: 0, y: 18 },
-            { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', force3D: true },
-            0
-          );
+            // Use simple transforms to minimize reflows
+            tl.fromTo(
+              subtitleRef.current,
+              { opacity: 0, y: 18 },
+              { opacity: 1, y: 0, duration: 0.45, ease: 'power2.out', force3D: true },
+              0
+            );
 
-          tl.fromTo(
-            scrollIndicatorRef.current,
-            { opacity: 0 },
-            { opacity: 1, duration: 0.3, force3D: true },
-            0.55
-          );
-        }, sectionRef);
+            tl.fromTo(
+              scrollIndicatorRef.current,
+              { opacity: 0 },
+              { opacity: 1, duration: 0.3, force3D: true },
+              0.55
+            );
+          }, sectionRef);
+        });
       });
     };
 

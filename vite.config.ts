@@ -31,31 +31,19 @@ export default defineConfig({
     rollupOptions: {
       output: {
         // Split vendor chunks for better caching
-        manualChunks: (id) => {
-          // GSAP and animation libraries
-          if (id.includes('gsap')) {
-            return 'gsap';
-          }
-          // React core
-          if (id.includes('react') || id.includes('react-dom')) {
-            return 'react-vendor';
-          }
-          // UI icons
-          if (id.includes('lucide-react')) {
-            return 'lucide';
-          }
-          // Radix UI components
-          if (id.includes('@radix-ui')) {
-            return 'radix';
-          }
-          // Lenis smooth scroll
-          if (id.includes('lenis')) {
-            return 'lenis';
-          }
-          // Form handling
-          if (id.includes('@formspree')) {
-            return 'forms';
-          }
+        manualChunks: {
+          'gsap': ['gsap'],
+          'react-vendor': ['react', 'react-dom'],
+          'lucide': ['lucide-react'],
+          'radix': [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-select',
+            '@radix-ui/react-tabs'
+          ],
+          'lenis': ['lenis'],
+          'forms': ['@formspree/react'],
         },
         // Optimize chunk loading
         chunkFileNames: 'assets/[name]-[hash].js',
