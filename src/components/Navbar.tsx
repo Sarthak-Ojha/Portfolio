@@ -17,15 +17,23 @@ const Navbar = ({ darkMode, toggleDark }: NavbarProps) => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 py-4 px-4 md:px-8 lg:px-16 bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border-b border-transparent dark:border-[#1a1a1a] transition-colors duration-300">
-      <div className="max-w-5xl mx-auto flex items-center justify-between">
-        <a
-          href="#"
-          className="text-2xl font-bold text-[#0a0a0a] dark:text-[#fafafa]"
-          style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-        >
-          S
-        </a>
+    <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#0a0a0a] focus:text-[#fafafa] focus:rounded-lg focus:font-medium"
+      >
+        Skip to main content
+      </a>
+      <nav className="fixed top-0 left-0 w-full z-50 py-4 px-4 md:px-8 lg:px-16 bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border-b border-transparent dark:border-[#1a1a1a] transition-colors duration-300">
+        <div className="max-w-5xl mx-auto flex items-center justify-between">
+          <a
+            href="#"
+            className="text-2xl font-bold text-[#0a0a0a] dark:text-[#fafafa]"
+            style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            aria-label="Sarthak Ojha - Home"
+          >
+            S
+          </a>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
@@ -33,7 +41,7 @@ const Navbar = ({ darkMode, toggleDark }: NavbarProps) => {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-[#0a0a0a] dark:text-[#fafafa] hover:text-[#525252] dark:hover:text-[#a3a3a3] transition-colors"
+              className="text-sm font-medium text-[#0a0a0a] dark:text-[#fafafa] hover:text-[#262626] dark:hover:text-[#d4d4d4] transition-colors"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               {link.name}
@@ -76,7 +84,7 @@ const Navbar = ({ darkMode, toggleDark }: NavbarProps) => {
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-base font-medium text-[#0a0a0a] dark:text-[#fafafa] hover:text-[#525252] dark:hover:text-[#a3a3a3] transition-colors py-2"
+                className="text-base font-medium text-[#0a0a0a] dark:text-[#fafafa] hover:text-[#262626] dark:hover:text-[#d4d4d4] transition-colors py-2"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {link.name}
@@ -86,6 +94,7 @@ const Navbar = ({ darkMode, toggleDark }: NavbarProps) => {
         </div>
       )}
     </nav>
+    </>
   );
 };
 

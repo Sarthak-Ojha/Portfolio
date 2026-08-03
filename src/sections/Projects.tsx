@@ -6,7 +6,8 @@ const techIcons: Record<string, string> = {
   Flutter: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
   Firebase: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
   SQLite: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg',
-  Stripe: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stripe/stripe-original.svg',
+  // Using a different CDN for Stripe to avoid 403 errors
+  Stripe: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/stripe/stripe-original-wordmark.svg',
   React: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
   'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
   'Maps API': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg',
@@ -137,14 +138,14 @@ const Projects = () => {
                     </h3>
                   </div>
                   <span
-                    className="text-sm font-medium text-[#a3a3a3] mt-1 md:mt-0"
+                    className="text-sm font-medium text-[#404040] dark:text-[#d4d4d4] mt-1 md:mt-0"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     {project.category}
                   </span>
                 </div>
-                <ChevronDown 
-                  className={`w-5 h-5 text-[#a3a3a3] flex-shrink-0 transition-transform duration-300 ${expandedIndex === index ? 'rotate-180' : ''}`}
+                <ChevronDown
+                  className={`w-5 h-5 text-[#404040] dark:text-[#d4d4d4] flex-shrink-0 transition-transform duration-300 ${expandedIndex === index ? 'rotate-180' : ''}`}
                 />
               </div>
               
@@ -153,7 +154,7 @@ const Projects = () => {
               >
                 <div className="overflow-hidden">
                   <p
-                    className="text-base text-[#525252] dark:text-[#a3a3a3] leading-relaxed max-w-3xl mb-6"
+                    className="text-base text-[#262626] dark:text-[#d4d4d4] leading-relaxed max-w-3xl mb-6"
                     style={{ fontFamily: "'Inter', sans-serif" }}
                   >
                     {project.description}
@@ -175,7 +176,7 @@ const Projects = () => {
                           />
                         )}
                         <span
-                          className="text-sm text-[#525252] dark:text-[#a3a3a3]"
+                          className="text-sm text-[#262626] dark:text-[#d4d4d4]"
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
                           {tag}
@@ -189,10 +190,11 @@ const Projects = () => {
                     <a
                       href={project.links.github}
                       onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-2 text-sm font-semibold text-[#0a0a0a] dark:text-[#fafafa] hover:text-[#525252] transition-colors"
+                      className="flex items-center gap-2 text-sm font-semibold text-[#0a0a0a] dark:text-[#fafafa] hover:text-[#262626] dark:hover:text-[#d4d4d4] transition-colors"
                       style={{ fontFamily: "'Inter', sans-serif" }}
+                      aria-label={`View source code for ${project.title} on GitHub`}
                     >
-                      <Github className="w-4 h-4" />
+                      <Github className="w-4 h-4" aria-hidden="true" />
                       Source Code
                     </a>
                   </div>

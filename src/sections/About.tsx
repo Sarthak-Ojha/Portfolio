@@ -138,7 +138,7 @@ const About = () => {
           {/* Bio Content */}
           <div ref={paragraphsRef}>
             <p
-              className="text-lg md:text-xl leading-relaxed text-[#525252] dark:text-[#d4d4d4]"
+              className="text-lg md:text-xl leading-relaxed text-[#262626] dark:text-[#d4d4d4]"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               I'm a Software Developer specializing in Flutter, Firebase, and full-stack web development. I build fast, scalable mobile applications and modern web solutions using Flutter, React, Node.js, and MongoDB, with a focus on clean code, performance, and great user experiences.
@@ -156,7 +156,7 @@ const About = () => {
               >
                 <div className="flex items-center gap-3 mb-2">
                   <stat.icon
-                    className="w-5 h-5 text-[#a3a3a3] dark:text-[#888888]"
+                    className="w-5 h-5 text-[#404040] dark:text-[#a3a3a3]"
                   />
                   <div
                     className="stat-number text-3xl md:text-4xl font-bold text-[#0a0a0a] dark:text-[#fafafa]"
@@ -166,7 +166,7 @@ const About = () => {
                   </div>
                 </div>
                 <div
-                  className="text-sm font-semibold text-[#525252] dark:text-[#a3a3a3]"
+                  className="text-sm font-semibold text-[#262626] dark:text-[#d4d4d4]"
                   style={{ fontFamily: "'Inter', sans-serif" }}
                 >
                   {stat.label}

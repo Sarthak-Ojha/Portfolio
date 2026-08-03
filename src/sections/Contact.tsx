@@ -139,7 +139,7 @@ const Contact = () => {
   };
 
   const socialLinks = [
-    { icon: Instagram, label: 'Instagram', href: 'https://www.instagram.com/_sarthakojha/' },
+    { icon: Instagram, label: 'Visit Sarthak Ojha\'s Instagram profile', href: 'https://www.instagram.com/_sarthakojha/' },
   ];
 
   return (
@@ -159,7 +159,7 @@ const Contact = () => {
             Have a Project in Mind?
           </h2>
           <p
-            className="text-lg max-w-xl text-[#525252] dark:text-[#a3a3a3]"
+            className="text-lg max-w-xl text-[#262626] dark:text-[#d4d4d4]"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
             Let's create something extraordinary together.
@@ -191,7 +191,7 @@ const Contact = () => {
             <div className="form-field">
               <label
                 htmlFor="name"
-                className={`block text-sm mb-2 transition-all duration-200 ${focusedField === 'name' || formData.name ? 'text-[#0a0a0a]' : 'text-[#a3a3a3]'
+                className={`block text-sm mb-2 transition-all duration-200 ${focusedField === 'name' || formData.name ? 'text-[#0a0a0a]' : 'text-[#404040]'
                   }`}
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
@@ -225,7 +225,7 @@ const Contact = () => {
             <div className="form-field">
               <label
                 htmlFor="email"
-                className={`block text-sm mb-2 transition-all duration-200 ${focusedField === 'email' || formData.email ? 'text-[#0a0a0a]' : 'text-[#a3a3a3]'
+                className={`block text-sm mb-2 transition-all duration-200 ${focusedField === 'email' || formData.email ? 'text-[#0a0a0a]' : 'text-[#404040]'
                   }`}
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
@@ -269,7 +269,7 @@ const Contact = () => {
             <div className="form-field">
               <label
                 htmlFor="message"
-                className={`block text-sm mb-2 transition-all duration-200 ${focusedField === 'message' || formData.message ? 'text-[#0a0a0a]' : 'text-[#a3a3a3]'
+                className={`block text-sm mb-2 transition-all duration-200 ${focusedField === 'message' || formData.message ? 'text-[#0a0a0a]' : 'text-[#404040]'
                   }`}
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
@@ -303,7 +303,7 @@ const Contact = () => {
             <button
               type="submit"
               disabled={state.submitting}
-              className="w-full md:w-auto px-8 py-4 font-semibold text-[#fafafa] bg-[#0a0a0a] flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#525252] disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full md:w-auto px-8 py-4 font-semibold text-[#fafafa] bg-[#0a0a0a] flex items-center justify-center gap-2 transition-all duration-300 hover:bg-[#262626] disabled:opacity-50 disabled:cursor-not-allowed"
               style={{
                 fontFamily: "'Inter', sans-serif",
               }}

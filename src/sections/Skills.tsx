@@ -116,7 +116,7 @@ const Skills = () => {
             >
               {/* Category label */}
               <h3
-                className="md:w-36 text-sm font-semibold text-[#a3a3a3] dark:text-[#666] uppercase tracking-wider flex-shrink-0 md:mb-0 mb-4"
+                className="md:w-36 text-sm font-semibold text-[#404040] dark:text-[#a3a3a3] uppercase tracking-wider flex-shrink-0 md:mb-0 mb-4"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {category.name}
@@ -140,7 +140,7 @@ const Skills = () => {
                       }}
                     />
                     <span
-                      className="text-sm font-medium text-[#525252] dark:text-[#a3a3a3]"
+                      className="text-sm font-medium text-[#262626] dark:text-[#d4d4d4]"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
                       {skill.name}

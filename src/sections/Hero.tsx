@@ -66,13 +66,13 @@ const Hero = () => {
         <div ref={subtitleRef} style={{ opacity: 0 }} className="space-y-6">
           <div className="space-y-2">
             <p
-              className="text-2xl md:text-3xl text-[#525252] dark:text-[#d4d4d4]"
+              className="text-2xl md:text-3xl text-[#262626] dark:text-[#e5e5e5]"
               style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             >
               Software Developer
             </p>
             <p
-              className="text-lg md:text-xl text-[#737373] dark:text-[#a3a3a3]"
+              className="text-lg md:text-xl text-[#404040] dark:text-[#d4d4d4]"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
               Mobile App & Full-Stack Developer
@@ -80,13 +80,13 @@ const Hero = () => {
           </div>
 
           {/* Contact Row */}
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-[#525252] dark:text-[#a3a3a3] text-sm md:text-base font-medium">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-[#262626] dark:text-[#d4d4d4] text-sm md:text-base font-medium">
             <div className="flex items-center gap-2">
-              <MapPin className="w-5 h-5 text-[#525252] dark:text-[#a3a3a3]" />
+              <MapPin className="w-5 h-5 text-[#262626] dark:text-[#d4d4d4]" />
               <span>Kathmandu, Nepal</span>
             </div>
             <div className="flex items-center gap-2">
-              <Mail className="w-5 h-5 text-[#525252] dark:text-[#a3a3a3]" />
+              <Mail className="w-5 h-5 text-[#262626] dark:text-[#d4d4d4]" />
               <span>sarthakojha.np@gmail.com</span>
             </div>
           </div>
@@ -108,11 +108,11 @@ const Hero = () => {
           </div>
 
           {/* Social Icons */}
-          <div className="flex gap-4 items-center pt-4 text-[#525252] dark:text-[#a3a3a3]">
-            <a href="https://github.com/Sarthak-Ojha" target="_blank" rel="noopener noreferrer" className="hover:text-[#0a0a0a] dark:hover:text-[#fafafa] transition-colors">
+          <div className="flex gap-4 items-center pt-4 text-[#262626] dark:text-[#d4d4d4]">
+            <a href="https://github.com/Sarthak-Ojha" target="_blank" rel="noopener noreferrer" className="hover:text-[#0a0a0a] dark:hover:text-[#fafafa] transition-colors" aria-label="Visit Sarthak Ojha's GitHub profile">
               <Github className="w-6 h-6" />
             </a>
-            <a href="https://www.linkedin.com/in/sarthak-ojha/" target="_blank" rel="noopener noreferrer" className="hover:text-[#0a0a0a] dark:hover:text-[#fafafa] transition-colors">
+            <a href="https://www.linkedin.com/in/sarthak-ojha/" target="_blank" rel="noopener noreferrer" className="hover:text-[#0a0a0a] dark:hover:text-[#fafafa] transition-colors" aria-label="Visit Sarthak Ojha's LinkedIn profile">
               <Linkedin className="w-6 h-6" />
             </a>
           </div>

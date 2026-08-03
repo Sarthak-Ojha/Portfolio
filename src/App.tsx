@@ -66,15 +66,19 @@ function App() {
   return (
     <div className="app bg-[#fafafa] dark:bg-[#0a0a0a] min-h-screen transition-colors duration-300">
       <Navbar darkMode={darkMode} toggleDark={() => setDarkMode(d => !d)} />
-      {/* Hero is eagerly loaded — it's the LCP element */}
-      <Hero />
+      <main id="main-content">
+        {/* Hero is eagerly loaded — it's the LCP element */}
+        <Hero />
 
-      {/* Everything below fold is lazy-loaded to reduce initial JS */}
+        {/* Everything below fold is lazy-loaded to reduce initial JS */}
+        <Suspense fallback={null}>
+          <About />
+          <Skills />
+          <Projects />
+          <Contact />
+        </Suspense>
+      </main>
       <Suspense fallback={null}>
-        <About />
-        <Skills />
-        <Projects />
-        <Contact />
         <Footer />
       </Suspense>
     </div>

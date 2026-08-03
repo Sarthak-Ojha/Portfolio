@@ -36,7 +36,7 @@ const Footer = () => {
         className="max-w-5xl mx-auto px-4 md:px-8 lg:px-16 flex justify-center text-center"
       >
         <p
-          className="text-xs text-[#a3a3a3] dark:text-[#666]"
+          className="text-xs text-[#404040] dark:text-[#a3a3a3]"
           style={{ fontFamily: "'Inter', sans-serif" }}
         >
           © {new Date().getFullYear()} Sarthak Ojha. All rights reserved.
