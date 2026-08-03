@@ -26,22 +26,49 @@ export default defineConfig({
   build: {
     // Enable CSS code splitting to reduce initial CSS payload
     cssCodeSplit: true,
+    // Optimize chunk size warnings
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         // Split vendor chunks for better caching
-        manualChunks: {
-          'gsap': ['gsap'],
-          'react-vendor': ['react', 'react-dom'],
-          'lucide': ['lucide-react'],
-          'radix': [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-popover',
-            '@radix-ui/react-select',
-            '@radix-ui/react-tabs'
-          ]
+        manualChunks: (id) => {
+          // GSAP and animation libraries
+          if (id.includes('gsap')) {
+            return 'gsap';
+          }
+          // React core
+          if (id.includes('react') || id.includes('react-dom')) {
+            return 'react-vendor';
+          }
+          // UI icons
+          if (id.includes('lucide-react')) {
+            return 'lucide';
+          }
+          // Radix UI components
+          if (id.includes('@radix-ui')) {
+            return 'radix';
+          }
+          // Lenis smooth scroll
+          if (id.includes('lenis')) {
+            return 'lenis';
+          }
+          // Form handling
+          if (id.includes('@formspree')) {
+            return 'forms';
+          }
         },
+        // Optimize chunk loading
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+      },
+      // Reduce memory usage during build
+      onwarn(warning) {
+        // Ignore certain warnings
+        if (warning.code === 'MODULE_BESIDE_DEPENDENCY') return;
       },
     },
+    // Minify options
+    minify: 'terser',
   },
 });
