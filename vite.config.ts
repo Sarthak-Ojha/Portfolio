@@ -68,7 +68,5 @@ export default defineConfig({
         if (warning.code === 'MODULE_BESIDE_DEPENDENCY') return;
       },
     },
-    // Minify options
-    minify: 'terser',
   },
 });
