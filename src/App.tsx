@@ -79,16 +79,14 @@ function App() {
         <Hero />
 
         {/* Everything below fold is lazy-loaded to reduce initial JS */}
-        <Suspense fallback={null}>
+        <Suspense fallback={<div className="h-20 animate-pulse bg-neutral-100 dark:bg-neutral-900" />}>
           <About />
           <Skills />
           <Projects />
           <Contact />
+          <Footer />
         </Suspense>
       </main>
-      <Suspense fallback={null}>
-        <Footer />
-      </Suspense>
     </div>
   );
 }

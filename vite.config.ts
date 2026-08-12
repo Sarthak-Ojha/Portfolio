@@ -45,20 +45,20 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-        // Split vendor chunks for better caching
-        manualChunks: {
-          'gsap': ['gsap'],
-          'react-vendor': ['react', 'react-dom'],
-          'lucide': ['lucide-react'],
-          'radix': [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-select',
-            '@radix-ui/react-tabs'
-          ],
-          'lenis': ['lenis'],
-          'forms': ['@formspree/react'],
+        // Split vendor chunks dynamically for optimum mobile parallel loading
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('react') || id.includes('scheduler')) {
+              return 'react-core';
+            }
+            if (id.includes('gsap') || id.includes('lenis')) {
+              return 'animations';
+            }
+            if (id.includes('lucide')) {
+              return 'icons';
+            }
+            return 'vendor';
+          }
         },
         // Optimize chunk loading
         chunkFileNames: 'assets/[name]-[hash].js',
@@ -72,7 +72,7 @@ export default defineConfig({
       },
     },
     // Optimize build performance
-    target: 'es2015',
+    target: 'esnext',
     minify: 'esbuild',
     // Optimize CSS inlining
     cssMinify: true,
