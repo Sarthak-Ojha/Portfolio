@@ -1,9 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from '../lib/gsap';
+import { techIcons } from '../assets/techIcons';
 
 interface SkillItem {
   name: string;
-  icon: string; // URL to devicons SVG
+  icon: string;
 }
 
 interface SkillCategory {
@@ -15,36 +16,36 @@ const skillCategories: SkillCategory[] = [
   {
     name: 'Languages',
     skills: [
-      { name: 'Dart', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg' },
-      { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
-      { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-      { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-      { name: 'PHP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg' },
+      { name: 'Dart', icon: techIcons['Dart'] },
+      { name: 'JavaScript', icon: techIcons['JavaScript'] },
+      { name: 'TypeScript', icon: techIcons['TypeScript'] },
+      { name: 'Python', icon: techIcons['Python'] },
+      { name: 'PHP', icon: techIcons['PHP'] },
     ],
   },
   {
     name: 'Mobile',
     skills: [
-      { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
-      { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
-      { name: 'Android', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg' },
+      { name: 'Flutter', icon: techIcons['Flutter'] },
+      { name: 'Firebase', icon: techIcons['Firebase'] },
+      { name: 'Android', icon: techIcons['Android'] },
     ],
   },
   {
     name: 'Frontend',
     skills: [
-      { name: 'HTML', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
-      { name: 'CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
-      { name: 'React', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-      { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+      { name: 'HTML', icon: techIcons['HTML'] },
+      { name: 'CSS', icon: techIcons['CSS'] },
+      { name: 'React', icon: techIcons['React'] },
+      { name: 'Next.js', icon: techIcons['Next.js'] },
     ],
   },
   {
     name: 'Backend',
     skills: [
-      { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-      { name: 'Express', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
-      { name: 'MongoDB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+      { name: 'Node.js', icon: techIcons['Node.js'] },
+      { name: 'Express', icon: techIcons['Express'] },
+      { name: 'MongoDB', icon: techIcons['MongoDB'] },
     ],
   },
 ];

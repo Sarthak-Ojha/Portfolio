@@ -1,20 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from '../lib/gsap';
 import { Github, ChevronDown } from 'lucide-react';
-
-const techIcons: Record<string, string> = {
-  Flutter: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg',
-  Firebase: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
-  SQLite: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg',
-  // Using inline SVG for Stripe to avoid CDN 403 errors
-  Stripe: '',
-  React: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
-  'Node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
-  'Maps API': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/google/google-original.svg',
-  PHP: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg',
-  CSS3: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-  MongoDB: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
-};
+import { techIcons } from '../assets/techIcons';
 
 const Projects = () => {
   const sectionRef = useRef<HTMLElement>(null);

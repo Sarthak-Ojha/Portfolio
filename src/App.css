@@ -6,6 +6,10 @@
   overflow-x: hidden;
 }
 
+h1 {
+  font-size-adjust: 0.58;
+}
+
 /* Hero section specific styles */
 .hero-section {
   position: relative;

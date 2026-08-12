@@ -1,16 +1,16 @@
 import path from "path"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
-import { inspectAttr } from 'kimi-plugin-inspect-react'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 import viteCompression from 'vite-plugin-compression'
+import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 
 // https://vite.dev/config/
 export default defineConfig({
   base: './',
   plugins: [
-    inspectAttr(),
     react(),
+    cssInjectedByJsPlugin(),
     ViteImageOptimizer({
       // WebP images are already hand-optimized — omitting webp key skips them
       png: { quality: 80 },
