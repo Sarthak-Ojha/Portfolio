@@ -1,32 +1,20 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://your-website-url.com/sitemap.xml
+# Correct Live Sitemap Link
+Sitemap: https://sarthakojha.com.np/sitemap.xml
 
-# Crawl-delay
-Crawl-delay: 1
+# Avoid crawling build system internals or temporary test tracks
+Disallow: /node_modules/
+Disallow: /.next/
+Disallow: /dist/
 
-# Disallow specific paths if any
-# Disallow: /private/
-# Disallow: /admin/
-
-# Allow specific important paths
-Allow: /src/
+# Maintain high discovery on static page visual components
 Allow: /public/
-Allow: /assets/
-
-# Block common bot paths
-Disallow: /*.json$
-Disallow: /*?*$
-Disallow: /search
-
-# Allow specific file types for SEO
 Allow: *.css
 Allow: *.js
+Allow: *.png
 Allow: *.jpg
 Allow: *.jpeg
-Allow: *.png
-Allow: *.gif
 Allow: *.svg
 Allow: *.webp
