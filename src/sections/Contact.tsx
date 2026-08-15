@@ -107,6 +107,15 @@ const Contact = () => {
     return () => ctx.revert();
   }, []);
 
+  useEffect(() => {
+    if (state.succeeded) {
+      setFormData({ name: '', email: '', message: '' });
+      if (formRef.current) {
+        formRef.current.reset();
+      }
+    }
+  }, [state.succeeded]);
+
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -127,15 +136,6 @@ const Contact = () => {
     
     // Submit to Formspree
     await handleSubmit(submitData as any);
-    
-    // Reset form after successful submission
-    if (state.succeeded) {
-      setFormData({ name: '', email: '', message: '' });
-      // Also reset the form element directly
-      if (formRef.current) {
-        formRef.current.reset();
-      }
-    }
   };
 
   const socialLinks = [

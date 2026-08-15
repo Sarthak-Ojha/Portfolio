@@ -14,38 +14,51 @@ interface SkillCategory {
 
 const skillCategories: SkillCategory[] = [
   {
+    name: 'Mobile',
+    skills: [
+      { name: 'Flutter', icon: techIcons['Flutter'] },
+      { name: 'Android', icon: techIcons['Android'] },
+      { name: 'Riverpod', icon: techIcons['Riverpod'] },
+      { name: 'Firebase', icon: techIcons['Firebase'] },
+    ],
+  },
+  {
     name: 'Languages',
     skills: [
       { name: 'Dart', icon: techIcons['Dart'] },
       { name: 'JavaScript', icon: techIcons['JavaScript'] },
       { name: 'TypeScript', icon: techIcons['TypeScript'] },
-      { name: 'Python', icon: techIcons['Python'] },
-      { name: 'PHP', icon: techIcons['PHP'] },
-    ],
-  },
-  {
-    name: 'Mobile',
-    skills: [
-      { name: 'Flutter', icon: techIcons['Flutter'] },
-      { name: 'Firebase', icon: techIcons['Firebase'] },
-      { name: 'Android', icon: techIcons['Android'] },
     ],
   },
   {
     name: 'Frontend',
     skills: [
-      { name: 'HTML', icon: techIcons['HTML'] },
-      { name: 'CSS', icon: techIcons['CSS'] },
       { name: 'React', icon: techIcons['React'] },
       { name: 'Next.js', icon: techIcons['Next.js'] },
+      { name: 'Tailwind CSS', icon: techIcons['Tailwind CSS'] },
+      { name: 'shadcn/ui', icon: techIcons['shadcn/ui'] },
     ],
   },
   {
-    name: 'Backend',
+    name: 'Backend & Auth',
     skills: [
-      { name: 'Node.js', icon: techIcons['Node.js'] },
-      { name: 'Express', icon: techIcons['Express'] },
-      { name: 'MongoDB', icon: techIcons['MongoDB'] },
+      { name: 'Next.js API', icon: techIcons['Next.js'] },
+      { name: 'Clerk', icon: techIcons['Clerk'] },
+    ],
+  },
+  {
+    name: 'Data & Persistence',
+    skills: [
+      { name: 'PostgreSQL', icon: techIcons['PostgreSQL'] },
+      { name: 'Prisma', icon: techIcons['Prisma'] },
+    ],
+  },
+  {
+    name: 'CI/CD',
+    skills: [
+      { name: 'GitHub', icon: techIcons['GitHub'] },
+      { name: 'Vercel', icon: techIcons['Vercel'] },
+      { name: 'Docker', icon: techIcons['Docker'] },
     ],
   },
 ];
@@ -112,25 +125,25 @@ const Skills = () => {
           {skillCategories.map((category, catIndex) => (
             <div
               key={catIndex}
-              className="skill-row flex flex-col md:flex-row md:items-center gap-6 border-b border-[#e5e5e5] dark:border-[#2a2a2a] py-6"
+              className="skill-row grid grid-cols-1 md:grid-cols-[200px_1fr] gap-4 md:gap-6 border-b border-[#e5e5e5] dark:border-[#2a2a2a] py-6"
             >
               {/* Category label */}
               <h3
-                className="md:w-36 text-sm font-semibold text-[#404040] dark:text-[#a3a3a3] uppercase tracking-wider flex-shrink-0 md:mb-0 mb-4"
+                className="text-sm font-semibold text-[#404040] dark:text-[#a3a3a3] uppercase tracking-wider"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 {category.name}
               </h3>
 
               {/* Icons row */}
-              <div className="flex flex-wrap gap-6 items-center">
+              <div className="flex flex-wrap gap-4 md:gap-6 items-center">
                 {category.skills.map((skill, i) => (
                   <div key={i} className="flex items-center gap-2">
                     <img
                       src={skill.icon}
                       alt={skill.name}
-                      className={`w-7 h-7 object-contain ${
-                        skill.name === 'GitHub' || skill.name === 'Next.js' || skill.name === 'Express'
+                      className={`w-6 h-6 md:w-7 md:h-7 object-contain ${
+                        skill.name === 'GitHub' || skill.name === 'Next.js' || skill.name === 'Express' || skill.name === 'Vercel'
                           ? 'dark:invert'
                           : ''
                       }`}
@@ -149,7 +162,7 @@ const Skills = () => {
                       }}
                     />
                     <span
-                      className="text-sm font-medium text-[#262626] dark:text-[#d4d4d4]"
+                      className="text-xs md:text-sm font-medium text-[#262626] dark:text-[#d4d4d4]"
                       style={{ fontFamily: "'Inter', sans-serif" }}
                     >
                       {skill.name}

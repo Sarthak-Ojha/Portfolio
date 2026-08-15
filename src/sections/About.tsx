@@ -138,10 +138,16 @@ const About = () => {
           {/* Bio Content */}
           <div ref={paragraphsRef}>
             <p
+              className="text-lg md:text-xl leading-relaxed text-[#262626] dark:text-[#d4d4d4] mb-4"
+              style={{ fontFamily: "'Inter', sans-serif" }}
+            >
+              I am a Software Developer specializing in Flutter, Firebase, and Full-stack Web development.
+            </p>
+            <p
               className="text-lg md:text-xl leading-relaxed text-[#262626] dark:text-[#d4d4d4]"
               style={{ fontFamily: "'Inter', sans-serif" }}
             >
-              I'm a Software Developer specializing in Flutter, Firebase, and full-stack web development. I build fast, scalable mobile applications and modern web solutions using Flutter, React, Node.js, and MongoDB, with a focus on clean code, performance, and great user experiences.
+              I build high-performance, production-ready mobile apps and modern web ecosystems using Flutter, React, Next.js, and PostgreSQL. My process focuses heavily on clean architecture, type-safe development, and crafting fluid user experiences from frontend to deployment.
             </p>
           </div>
 
