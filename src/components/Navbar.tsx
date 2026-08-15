@@ -27,7 +27,7 @@ const Navbar = ({ darkMode, toggleDark }: NavbarProps) => {
       <nav className="fixed top-0 left-0 w-full z-50 py-4 px-4 md:px-8 lg:px-16 bg-white/80 dark:bg-[#0a0a0a]/80 backdrop-blur-md border-b border-transparent dark:border-[#1a1a1a] transition-colors duration-300">
         <div className="max-w-5xl mx-auto flex items-center justify-between">
           <a
-            href="#"
+            href="/"
             className="text-2xl font-bold text-[#0a0a0a] dark:text-[#fafafa]"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
             aria-label="Sarthak Ojha - Home"
