@@ -109,14 +109,6 @@ const Hero = () => {
           {/* Action Buttons */}
           <div className="flex flex-wrap gap-4 pt-2">
             <a
-              href="/Sarthak_Ojha_Resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-2.5 bg-[#0f172a] dark:bg-[#fafafa] text-white dark:text-[#0a0a0a] rounded-lg font-medium hover:bg-[#1e293b] dark:hover:bg-[#e5e5e5] transition-colors inline-flex items-center justify-center"
-            >
-              View CV
-            </a>
-            <a
               href="#projects"
               className="px-6 py-2.5 border border-[#e5e5e5] dark:border-[#333333] text-[#0a0a0a] dark:text-[#fafafa] rounded-lg font-medium hover:bg-[#fafafa] dark:hover:bg-[#1a1a1a] transition-colors"
             >
